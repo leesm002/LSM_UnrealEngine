@@ -9,6 +9,12 @@ AMyCharacter::AMyCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	static ConstructorHelpers::FObjectFinder<USkeletalMesh> SM(TEXT("SkeletalMesh'/Game/ParagonGreystone/Characters/Heroes/Greystone/Meshes/Greystone.Greystone'"));
+
+	if (SM.Succeeded())
+	{
+		GetMesh()->SetSkeletalMesh(SM.Object);
+	}
 }
 
 // Called when the game starts or when spawned
@@ -30,5 +36,13 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void AMyCharacter::UpDown(float Value)
+{
+}
+
+void AMyCharacter::LeftRight(float Value)
+{
 }
 
