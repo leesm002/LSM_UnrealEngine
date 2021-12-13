@@ -67,3 +67,7 @@ void AMyPawn::LeftRight(float Value)
 
 }
 
+void AMyPawn::Yaw(float Value)
+{
+}
+
