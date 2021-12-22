@@ -20,6 +20,14 @@ public:
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
 	void PlayAttackMontage();
+	void JumpToSection(int32 SectionIndex);
+
+	UFUNCTION()
+	FName GetAttackMontageName(int32 SectionIndex);
+
+private:
+	UFUNCTION()
+	void AnimNotify_AttackHit();
 
 private:
 

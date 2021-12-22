@@ -73,12 +73,15 @@ void AMyCharacter::Attack()
 
 	AnimInstance->PlayAttackMontage();
 
+	AnimInstance->JumpToSection(AttackIndex);
+
+	AttackIndex = (AttackIndex + 1) % 3;
+
 	IsAttacking = true;
 }
 
 void AMyCharacter::UpDown(float Value)
 {
-	UE_LOG(LogTemp, Warning, TEXT("UpDown %f"), Value);
 	if (Value == 0.f)
 		return;
 
@@ -88,7 +91,6 @@ void AMyCharacter::UpDown(float Value)
 
 void AMyCharacter::LeftRight(float Value)
 {
-	UE_LOG(LogTemp, Warning, TEXT("LeftRight %f"), Value);
 	if (Value == 0.f)
 		return;
 

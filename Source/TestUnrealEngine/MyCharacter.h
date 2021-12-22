@@ -47,4 +47,8 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category=Pawn)
 	bool IsAttacking = false;
+
+	UPROPERTY()
+	int32 AttackIndex = 0;
+
 };
