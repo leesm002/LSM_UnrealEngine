@@ -6,9 +6,8 @@
 #include "Animation/AnimInstance.h"
 #include "MyAnimInstance.generated.h"
 
-/**
- * 
- */
+DECLARE_MULTICAST_DELEGATE(FOnAttackHit);
+
 UCLASS()
 class TESTUNREALENGINE_API UMyAnimInstance : public UAnimInstance
 {
@@ -45,4 +44,7 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Pawn, Meta = (AllowPrivateAccess = true))
 	float Vertical;
+
+public:
+	FOnAttackHit OnAttackHit;
 };
